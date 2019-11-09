@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitMenuButton?>
@@ -8,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="Main" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.reg_controller">
+<AnchorPane id="Main" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Reg_controller">
    <children>
       <AnchorPane layoutX="15.0" layoutY="14.0" prefHeight="741.0" prefWidth="995.0">
          <children>
@@ -78,7 +79,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField layoutX="219.0" layoutY="462.0" id="email_tb" fx:id="email_tb">
+            <TextField id="email_tb" fx:id="email_tb" layoutX="219.0" layoutY="462.0" prefHeight="53.0">
                <font>
                   <Font size="18.0" />
                </font>
@@ -88,12 +89,20 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <SplitMenuButton layoutX="225.0" layoutY="404.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="238.0" text="SplitMenuButton">
+            <SplitMenuButton layoutX="225.0" layoutY="404.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="238.0">
               <items>
-                <MenuItem mnemonicParsing="false" text="utca" />
+                <MenuItem text="utca" />
                 <MenuItem mnemonicParsing="false" text="út" />
               </items>
+               <font>
+                  <Font size="18.0" />
+               </font>
             </SplitMenuButton>
+            <Button id="regisztracio_bt" fx:id="regisztracio_bt" layoutX="262.0" layoutY="554.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="138.0" text="Regisztráció">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>
