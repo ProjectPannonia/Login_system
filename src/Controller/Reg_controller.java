@@ -1,5 +1,6 @@
 package Controller;
 
+import Checkers.Emptycheck;
 import Database.Register;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,18 +25,23 @@ public class Reg_controller {
         int zipCode = Integer.parseInt(iranyitoszam_tb.getText());
         String streetName = utcanev_tb.getText();
         String email = email_tb.getText();
-        return new User(firstName,lastName,city,streetName,email,zipCode);
+        return new User(firstName,lastName,zipCode,city,streetName,email);
     }
 
     public void registration(ActionEvent e){
+        Emptycheck emptycheck = new Emptycheck();
         String firstName = vezeteknev_tb.getText();
         String lastName = keresztnev_tb.getText();
-        String city = telepules_tb.getText();
         int zipCode = Integer.parseInt(iranyitoszam_tb.getText());
+        String city = telepules_tb.getText();
         String streetName = utcanev_tb.getText();
         String email = email_tb.getText();
-        User user = new User(firstName,lastName,city,streetName,email,zipCode);
-        Register register = new Register();
-        register.SendToDatabase(user);
+        if(emptycheck.isItEmptyInt(zipCode)){
+
+            User user = new User(firstName,lastName,zipCode,city,streetName,email);
+            Register register = new Register();
+            register.SendToDatabase(user);
+
+        }
     }
 }

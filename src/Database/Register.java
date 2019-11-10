@@ -13,12 +13,12 @@ public class Register {
 
     public void SendToDatabase(User user){
         try {
-            String sendNewUser = "INSERT INTO Users(FirstName,LastName,City,ZipCode,StreetName,Email)" + "values(?,?,?,?,?,?)";
+            String sendNewUser = "INSERT INTO \"Users\"(FirstName,LastName,ZipCode,City,StreetName,Email)" + "values(?,?,?,?,?,?)";
             preparedStatement = connection.prepareStatement(sendNewUser);
             preparedStatement.setString(1,user.getFirstname());
             preparedStatement.setString(2,user.getLastname());
-            preparedStatement.setString(3,user.getCity());
-            preparedStatement.setInt(4,user.getZipcode());
+            preparedStatement.setInt(3,user.getZipcode());
+            preparedStatement.setString(4,user.getCity());
             preparedStatement.setString(5,user.getStreetName());
             preparedStatement.setString(6,user.getEmail());
             preparedStatement.execute();

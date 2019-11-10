@@ -32,7 +32,7 @@ public class User {
         return zipcode;
     }
 
-    public User(String firstname, String lastname, String city, String address, String email, int zipcode){
+    public User(String firstname, String lastname, int zipcode, String city, String address, String email){
         this.firstname = firstname;
         this.lastname = lastname;
         this.city = city;
