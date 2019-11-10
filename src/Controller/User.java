@@ -7,6 +7,8 @@ public class User {
     private String streetName;
     private String email;
     private int zipcode;
+    private String loginName;
+    private String loginPassword;
 
     public String getFirstname() {
         return firstname;
@@ -32,13 +34,17 @@ public class User {
         return zipcode;
     }
 
-    public User(String firstname, String lastname, int zipcode, String city, String address, String email){
+    public String getLoginName(){return loginName;}
+    public String getLoginPassword(){return loginPassword;}
+    public User(String firstname, String lastname, int zipcode, String city, String address, String email,String loginName,String loginPassword){
         this.firstname = firstname;
         this.lastname = lastname;
         this.city = city;
         this.streetName = address;
         this.email = email;
         this.zipcode = zipcode;
+        this.loginName = loginName;
+        this.loginPassword = loginPassword;
     }
 
 }

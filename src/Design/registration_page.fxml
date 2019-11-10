@@ -6,7 +6,6 @@
 <?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="Main" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Reg_controller">
@@ -18,12 +17,6 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <AnchorPane layoutX="545.0" layoutY="44.0" prefHeight="462.0" prefWidth="404.0">
-               <children>
-                  <VBox layoutX="8.0" layoutY="7.0" prefHeight="310.0" prefWidth="179.0" />
-                  <VBox layoutX="215.0" layoutY="7.0" prefHeight="447.0" prefWidth="179.0" />
-               </children>
-            </AnchorPane>
             <Label alignment="CENTER" layoutX="46.0" layoutY="32.0" prefHeight="53.0" prefWidth="179.0" text="Vezetéknév">
                <font>
                   <Font size="18.0" />
@@ -44,26 +37,16 @@
                   <Font size="18.0" />
                </font>
             </TextField>
-            <Label alignment="CENTER" layoutX="46.0" layoutY="184.0" prefHeight="53.0" prefWidth="179.0" text="Település">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <TextField id="telepules_tb" fx:id="telepules_tb" layoutX="225.0" layoutY="184.0" prefHeight="53.0">
+            <TextField id="telepules_tb" fx:id="telepules_tb" layoutX="225.0" layoutY="253.0" prefHeight="53.0">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <Label alignment="CENTER" layoutX="46.0" layoutY="255.0" prefHeight="53.0" prefWidth="179.0" text="Irányítószám">
+            <Label alignment="CENTER" layoutX="46.0" layoutY="184.0" prefHeight="53.0" prefWidth="179.0" text="Irányítószám">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField id="iranyitoszam_tb" fx:id="iranyitoszam_tb" layoutX="225.0" layoutY="255.0" prefHeight="53.0">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </TextField>
             <TextField id="utcanev_tb" fx:id="utcanev_tb" layoutX="225.0" layoutY="328.0" prefHeight="53.0">
                <font>
                   <Font size="18.0" />
@@ -79,7 +62,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField id="email_tb" fx:id="email_tb" layoutX="219.0" layoutY="462.0" prefHeight="53.0">
+            <TextField id="email_tb" fx:id="email_tb" layoutX="225.0" layoutY="468.0" prefHeight="53.0">
                <font>
                   <Font size="18.0" />
                </font>
@@ -98,11 +81,41 @@
                   <Font size="18.0" />
                </font>
             </SplitMenuButton>
-            <Button id="regisztracio_bt" fx:id="regisztracio_bt" onAction="#registration" layoutX="262.0" layoutY="554.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="138.0" text="Regisztráció">
+            <Button id="regisztracio_bt" fx:id="regisztracio_bt" layoutX="661.0" layoutY="362.0" mnemonicParsing="false" onAction="#registration" prefHeight="39.0" prefWidth="138.0" text="Regisztráció">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
+            <Label alignment="CENTER" layoutX="47.0" layoutY="253.0" prefHeight="53.0" prefWidth="179.0" text="Település">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField id="iranyitoszam_tb" fx:id="iranyitoszam_tb" layoutX="225.0" layoutY="187.0" prefHeight="53.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField id="loginName_tb" fx:id="loginName_tb" layoutX="225.0" layoutY="544.0" prefHeight="53.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField id="loginPassword_tb" fx:id="loginPassword_tb" layoutX="225.0" layoutY="613.0" prefHeight="53.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="40.0" layoutY="544.0" prefHeight="57.0" prefWidth="179.0" text="Felhasználónév">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="37.0" layoutY="609.0" prefHeight="57.0" prefWidth="179.0" text="Jelszó">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>
