@@ -98,7 +98,7 @@
                   <Font size="18.0" />
                </font>
             </SplitMenuButton>
-            <Button id="regisztracio_bt" fx:id="regisztracio_bt" layoutX="262.0" layoutY="554.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="138.0" text="Regisztráció">
+            <Button id="regisztracio_bt" fx:id="regisztracio_bt" onAction="#registration" layoutX="262.0" layoutY="554.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="138.0" text="Regisztráció">
                <font>
                   <Font size="18.0" />
                </font>

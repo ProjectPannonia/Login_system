@@ -38,11 +38,20 @@ public class Db {
         try
         {
             databaseMetaData = connection.getMetaData();
+            System.out.println(databaseMetaData);
         } catch (SQLException e)
         {
             e.printStackTrace();
         }
 
+       /* try {
+            resultSet = databaseMetaData.getTables(null,"APP","Users",null);
+            if(!resultSet.next()){
+                statement.execute("CREATE TABLE Users(FirstName text,LastName text,City text,ZipCode Integer,StreetName text,Email text)");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }*/
     }
 
 }
