@@ -1,7 +1,26 @@
 package Checkers;
 
+import Controller.User;
+
 public class Emptycheck {
-    public boolean isItEmptyInt(int e){
-        return e != 0 ? true : false;
+
+    // Return true if every cell have data
+
+    public boolean isItEmptyString(User user) {
+        String firstName = user.getFirstname();
+        String lastName = user.getLastname();
+        Integer zipCode = user.getZipcode();
+        String city = user.getCity();
+        String streetName = user.getStreetName();
+        String email = user.getEmail();
+        String loginName = user.getLoginName();
+        String loginPassword = user.getLoginPassword();
+
+        if(firstName != null && lastName != null && city != null && streetName != null && email != null && loginName != null && loginPassword != null){
+            return true;
+        }else{
+            return false;
+        }
+
     }
 }

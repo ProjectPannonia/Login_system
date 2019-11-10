@@ -6,13 +6,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class CreateListFromDatabase
+public class RetrieveDataFromDatabase
 {
     Db database = new Db();
     Statement statement = database.getStatement();
     ArrayList<User> allUser = new ArrayList<>();
     ResultSet resultSet = null;
-    private String query = "SELECT * FROM Users";
+    private String query = "SELECT * FROM \"Users\"";
 
     public ArrayList<User> getAllUser(){
 

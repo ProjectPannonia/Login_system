@@ -14,6 +14,7 @@ public class Register {
     public void SendToDatabase(User user){
         try {
             String sendNewUser = "INSERT INTO \"Users\"(first_name,last_name,zip_code,city,street_name,email,login_name,login_password)" + "values(?,?,?,?,?,?,?,?)";
+            //int zip = Integer.parseInt(user.getZipcode())
             preparedStatement = connection.prepareStatement(sendNewUser);
             preparedStatement.setString(1,user.getFirstname());
             preparedStatement.setString(2,user.getLastname());
