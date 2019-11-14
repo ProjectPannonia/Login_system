@@ -2,6 +2,8 @@ package Controller;
 
 import Alerts.EmptyCellAlert;
 import Database.RetrieveDataFromDatabase;
+import ScreenCreator.CreateMainScreen;
+import ScreenCreator.CreateScreen;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -33,17 +35,8 @@ public class LoginPageController {
             boolean isRegistered = Checkers.isItRegistered.isItRegistered(
                     new LoggingUser(userName_tb.getText(),password_tb.getText()));
             if(isRegistered){
-                Parent root;
-                try {
-                    root = FXMLLoader.load(getClass().getClassLoader().getResource("Design/mainscreen.fxml"));
-                    Stage stage = new Stage();
-                    stage.setTitle("This is the program main screen!");
-                    stage.setScene(new Scene(root,600,600));
-                    stage.show();
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
-
+                CreateScreen createMain = new CreateMainScreen();
+                createMain.showScreen();
             }
         }else{
             EmptyCellAlert emptyCellAlert = new EmptyCellAlert();
