@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="310.0" prefWidth="492.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginPageController">
+<AnchorPane prefHeight="380.0" prefWidth="492.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginPageController">
    <children>
       <Label alignment="CENTER" layoutX="52.0" layoutY="71.0" prefHeight="32.0" prefWidth="180.0" text="Username">
          <font>
@@ -20,12 +20,12 @@
       </Label>
       <TextField id="userName_tb" fx:id="userName_tb" layoutX="46.0" layoutY="123.0" prefHeight="32.0" prefWidth="180.0" />
       <TextField id="password_tb" fx:id="password_tb" layoutX="272.0" layoutY="123.0" prefHeight="32.0" prefWidth="180.0" />
-      <Button id="login_bt" fx:id="login_bt" layoutX="182.0" layoutY="180.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="128.0" text="Login">
+      <Button id="login_bt" fx:id="login_bt" onAction="#login" layoutX="182.0" layoutY="180.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="128.0" text="Login">
          <font>
             <Font size="19.0" />
          </font>
       </Button>
-      <Button id="register_bt" fx:id="register_bt1" layoutX="182.0" layoutY="242.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="128.0" text="Sign Up">
+      <Button id="register_bt" fx:id="register_bt" layoutX="182.0" layoutY="242.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="128.0" text="Sign Up">
          <font>
             <Font size="19.0" />
          </font>
@@ -35,5 +35,10 @@
             <Font size="15.0" />
          </font>
       </Label>
+      <Button id="login_problem_bt" fx:id="login_problem_bt" layoutX="182.0" layoutY="304.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="157.0" text="Login problem">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
