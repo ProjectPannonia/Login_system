@@ -15,9 +15,9 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <Button id = "bejelentkezes" fx:id="bejelentkezes" layoutX="185.0" layoutY="113.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="147.0" text="Belépek" />
-            <Button id="" layoutX="185.0" layoutY="150.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="147.0" text="Regisztrálok" />
-            <Button layoutX="185.0" layoutY="202.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="147.0" text="Elfelejtettem" />
+            <Button id = "login_bt" fx:id="login_bt" layoutX="185.0" layoutY="113.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="147.0" text="Belépek" />
+            <Button id= "registration_bt" fx:id="registration_bt" layoutX="185.0" layoutY="150.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="147.0" text="Regisztrálok" />
+            <Button id = "forgot_bt" fx:id="forgot_bt" layoutX="185.0" layoutY="202.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="147.0" text="Elfelejtettem" />
          </children>
       </AnchorPane>
    </children>
