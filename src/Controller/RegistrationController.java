@@ -14,7 +14,7 @@ import javafx.scene.control.TextField;
 import java.util.ArrayList;
 
 
-public class Reg_controller {
+public class RegistrationController {
     @FXML
     TextField vezeteknev_tb, keresztnev_tb, telepules_tb,
             iranyitoszam_tb,utcanev_tb,kozteruletjelleg_tb,email_tb, loginName_tb,loginPassword_tb;

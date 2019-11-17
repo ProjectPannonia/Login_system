@@ -1,23 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Mainscreen_Controller">
+<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainscreenController">
    <children>
       <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="370.0" prefWidth="517.0">
          <children>
-            <Label alignment="CENTER" layoutX="113.0" layoutY="43.0" prefHeight="45.0" prefWidth="291.0" text="Main screen">
+            <Label layoutX="7.0" layoutY="8.0" prefHeight="45.0" prefWidth="135.0" text="Main Screen">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Button id = "login_bt" fx:id="login_bt" layoutX="185.0" layoutY="113.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="147.0" text="Belépek" />
-            <Button id= "registration_bt" fx:id="registration_bt" layoutX="185.0" layoutY="150.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="147.0" text="Regisztrálok" />
-            <Button id = "forgot_bt" fx:id="forgot_bt" layoutX="185.0" layoutY="202.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="147.0" text="Elfelejtettem" />
+            <Label id="logged_in" fx:id="logged_in" alignment="CENTER" layoutX="7.0" layoutY="59.0" prefHeight="45.0" prefWidth="291.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ButtonBar layoutX="7.0" layoutY="104.0" prefHeight="140.0" prefWidth="366.0">
+              <buttons>
+                <Button id="settings_bt" fx:id="settings_bt" onAction="#settings" mnemonicParsing="false" text="Adatok megadása">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="195.0" text="Button">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+              </buttons>
+            </ButtonBar>
          </children>
       </AnchorPane>
    </children>
