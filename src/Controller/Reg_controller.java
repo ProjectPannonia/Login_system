@@ -1,11 +1,11 @@
 package Controller;
 
-import Alerts.EmptyCellAlert;
+import Alerts.CellsAreEmpty;
 import Alerts.UsernameAlreadyInUse;
 import Checkers.DuplicateChecker;
 import Checkers.Emptycheck;
 import Database.Register;
-import Database.RetrieveDataFromDatabase;
+import Database.RetrieveAllDataFromDatabase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -29,11 +29,11 @@ public class Reg_controller {
     {
         Emptycheck emptycheck = new Emptycheck();
         DuplicateChecker duplicateChecker = new DuplicateChecker();
-        EmptyCellAlert emptyCellAlert = new EmptyCellAlert();
+        CellsAreEmpty cellsAreEmpty = new CellsAreEmpty();
         Register register = new Register();
         UsernameAlreadyInUse usernameAlreadyInUse = new UsernameAlreadyInUse();
-        RetrieveDataFromDatabase retrieveDataFromDatabase = new RetrieveDataFromDatabase();
-        ArrayList<User> usersInDatabase = retrieveDataFromDatabase.getAllUser();
+        RetrieveAllDataFromDatabase retrieveAllDataFromDatabase = new RetrieveAllDataFromDatabase();
+        ArrayList<User> usersInDatabase = retrieveAllDataFromDatabase.getAllUser();
 
         boolean emptyCell;
         boolean notDuplicated;
@@ -71,7 +71,7 @@ public class Reg_controller {
                 }
 
         }else{
-            emptyCellAlert.SendAlert();
+            cellsAreEmpty.SendAlert();
         }
 
         }

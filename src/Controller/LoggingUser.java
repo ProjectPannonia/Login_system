@@ -12,8 +12,6 @@ public class LoggingUser {
         return password;
     }
 
-
-
     public LoggingUser(String userName,String password){
         this.userName = userName;
         this.password = password;

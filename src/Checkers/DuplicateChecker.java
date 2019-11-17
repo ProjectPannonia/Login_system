@@ -1,13 +1,13 @@
 package Checkers;
 
 import Controller.User;
-import Database.RetrieveDataFromDatabase;
+import Database.RetrieveAllDataFromDatabase;
 
 import java.util.ArrayList;
 
 public class DuplicateChecker
 {
-    RetrieveDataFromDatabase createListFromDatabase = new RetrieveDataFromDatabase();
+    RetrieveAllDataFromDatabase createListFromDatabase = new RetrieveAllDataFromDatabase();
     ArrayList<User> registeredUsers = new ArrayList<>();
     private boolean flag = false;
 

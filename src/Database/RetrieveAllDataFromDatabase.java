@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class RetrieveDataFromDatabase
+public class RetrieveAllDataFromDatabase
 {
     Db database = new Db();
     Statement statement = database.getStatement();

@@ -2,13 +2,13 @@ package Alerts;
 
 import javafx.scene.control.Alert;
 
-public class EmptyCellAlert implements MyAlert {
+public class PasswordIsEmpty implements MyAlert {
     @Override
     public void SendAlert() {
-        System.out.println("Az űrlap valamelyik mezője üres!");
+        System.out.println("A jelszó mező üres!");
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Hiba!");
-        alert.setContentText("Eggyik cellát üreset hagytad!");
+        alert.setContentText("Nem írtad be a jelszavat!");
         alert.showAndWait();
     }
 }
