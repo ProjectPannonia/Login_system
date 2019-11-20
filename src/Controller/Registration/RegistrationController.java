@@ -1,4 +1,4 @@
-package Controller;
+package Controller.Registration;
 
 import Alerts.CellsAreEmpty;
 import Alerts.UsernameAlreadyInUse;

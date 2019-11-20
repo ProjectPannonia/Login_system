@@ -1,4 +1,4 @@
-package Controller;
+package Controller.SettingsPage;
 
 import Database.RetrieveAllUser;
 import UserObjects.User;

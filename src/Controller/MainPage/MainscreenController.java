@@ -1,7 +1,7 @@
-package Controller;
+package Controller.MainPage;
 
 import Database.RetrieveTemporaryUser;
-import ScreenCreator.SettingsScreenCreator;
+import Controller.SettingsPage.SettingsScreenCreator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -31,6 +31,9 @@ public class MainscreenController {
         System.out.println(actualUser);
         SettingsScreenCreator settingsScreenCreator = new SettingsScreenCreator();
         settingsScreenCreator.showScreen();
+    }
+    public void logOut(ActionEvent e){
+        System.out.println("Megnyomtad a kijelentkezés gombot!");
     }
 
 }

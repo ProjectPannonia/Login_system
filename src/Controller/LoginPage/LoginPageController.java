@@ -1,9 +1,9 @@
-package Controller;
+package Controller.LoginPage;
 
 import Alerts.*;
 import Checkers.IsItRegistered;
 import Database.TemporaryUser;
-import ScreenCreator.MainPageCreator;
+import Controller.MainPage.MainPageCreator;
 import UserObjects.LoggingUser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

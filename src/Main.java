@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     public void start(Stage primaryStage) throws  Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("Design/login_page.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Controller/LoginPage/login_page.fxml"));
         primaryStage.setTitle("Registration page");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
