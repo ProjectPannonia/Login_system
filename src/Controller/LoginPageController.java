@@ -2,13 +2,13 @@ package Controller;
 
 import Alerts.*;
 import Checkers.IsItRegistered;
-import ScreenCreator.CreateMainScreen;
-import ScreenCreator.CreateScreen;
+import Database.TemporaryUser;
+import ScreenCreator.MainPageCreator;
+import UserObjects.LoggingUser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-
 
 public class LoginPageController {
 
@@ -36,14 +36,17 @@ public class LoginPageController {
             }
         }else{
             IsItRegistered isItRegistered = new IsItRegistered();
-
             String userName = userName_tb.getText();
             String password = userName_tb.getText();
-            boolean registered = isItRegistered.isItRegistered(new LoggingUser(userName,password));
+            LoggingUser user = new LoggingUser(userName,password);
+
+            boolean registered = isItRegistered.isItRegistered(user);
 
                 if(!registered){
-                    CreateScreen loggedIn = new CreateMainScreen();
+                    MainPageCreator loggedIn = new MainPageCreator();
                     loggedIn.showScreen();
+                    TemporaryUser temporaryUser = new TemporaryUser();
+                    temporaryUser.SendTemporaryUser(userName);
                 }else {
                   myAlert = new NotRegistered();
                   myAlert.SendAlert();

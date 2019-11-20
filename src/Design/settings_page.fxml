@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
 
 <AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SettingsScreenController">
-
+   <children>
+      <Label alignment="CENTER" layoutX="6.0" layoutY="6.0" prefHeight="44.0" prefWidth="122.0" text="Settings" />
+      <Label alignment="CENTER" layoutX="128.0" layoutY="6.0" prefHeight="44.0" prefWidth="122.0" text="Adatok" />
+      <Label alignment="CENTER" layoutX="6.0" layoutY="50.0" prefHeight="44.0" prefWidth="122.0" text="Vezetéknév" />
+      <Label alignment="CENTER" layoutX="6.0" layoutY="94.0" prefHeight="44.0" prefWidth="122.0" text="Keresztnév" />
+      <Label alignment="CENTER" layoutX="6.0" layoutY="138.0" prefHeight="44.0" prefWidth="122.0" text="Irányítószám" />
+      <Label alignment="CENTER" layoutX="6.0" layoutY="182.0" prefHeight="44.0" prefWidth="122.0" text="Város" />
+      <Label alignment="CENTER" layoutX="6.0" layoutY="226.0" prefHeight="44.0" prefWidth="122.0" text="Utca" />
+      <Label alignment="CENTER" layoutX="6.0" layoutY="270.0" prefHeight="44.0" prefWidth="122.0" text="E-mail cím" />
+      <Label alignment="CENTER" layoutX="6.0" layoutY="314.0" prefHeight="44.0" prefWidth="122.0" text="Felhasználónév" />
+      <Label alignment="CENTER" layoutX="6.0" layoutY="356.0" prefHeight="44.0" prefWidth="122.0" text="Jelszó" />
+      <TextField id="first_name" fx:id="first_name" layoutX="128.0" layoutY="60.0" />
+      <TextField id="last_name" fx:id="last_name" layoutX="128.0" layoutY="104.0" />
+      <TextField id="zip_code" fx:id="zip_code" layoutX="128.0" layoutY="148.0" />
+      <TextField id="city" fx:id="city" layoutX="128.0" layoutY="192.0" />
+      <TextField id="street" fx:id="street" layoutX="128.0" layoutY="236.0" />
+      <TextField id="email" fx:id="email" layoutX="128.0" layoutY="280.0" />
+      <TextField id="user_name" fx:id="user_name" layoutX="128.0" layoutY="324.0" />
+      <TextField id="password" fx:id="password" layoutX="128.0" layoutY="366.0" />
+   </children>
 </AnchorPane>

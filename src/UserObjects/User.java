@@ -1,4 +1,4 @@
-package Controller;
+package UserObjects;
 
 public class User {
     private String firstname;

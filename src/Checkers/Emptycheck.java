@@ -1,6 +1,6 @@
 package Checkers;
 
-import Controller.User;
+import UserObjects.User;
 
 public class Emptycheck {
 

@@ -1,4 +1,4 @@
-package Controller;
+package UserObjects;
 
 public class LoggingUser {
     private String userName;

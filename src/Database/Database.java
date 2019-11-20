@@ -2,7 +2,7 @@ package Database;
 
 import java.sql.*;
 
-public class Db {
+public class Database {
     private final String url = "jdbc:postgresql://localhost:5432/LD";
     private final String user = "postgres";
     private final String password = "Zetka67";
@@ -19,7 +19,7 @@ public class Db {
         return this.statement;
     }
 
-    public Db(){
+    public Database(){
         try
         {
             connection = DriverManager.getConnection(url,user,password);

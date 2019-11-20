@@ -5,7 +5,8 @@ import Alerts.UsernameAlreadyInUse;
 import Checkers.DuplicateChecker;
 import Checkers.Emptycheck;
 import Database.Register;
-import Database.RetrieveAllDataFromDatabase;
+import Database.RetrieveAllUser;
+import UserObjects.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -32,8 +33,8 @@ public class RegistrationController {
         CellsAreEmpty cellsAreEmpty = new CellsAreEmpty();
         Register register = new Register();
         UsernameAlreadyInUse usernameAlreadyInUse = new UsernameAlreadyInUse();
-        RetrieveAllDataFromDatabase retrieveAllDataFromDatabase = new RetrieveAllDataFromDatabase();
-        ArrayList<User> usersInDatabase = retrieveAllDataFromDatabase.getAllUser();
+        RetrieveAllUser retrieveAllUser = new RetrieveAllUser();
+        ArrayList<User> usersInDatabase = retrieveAllUser.getAllUser();
 
         boolean emptyCell;
         boolean notDuplicated;

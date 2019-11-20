@@ -1,33 +1,27 @@
 package Database;
 
-import Controller.User;
+import UserObjects.LoggingUser;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class RetrieveAllDataFromDatabase
-{
-    Db database = new Db();
+public class RetrieveUsernamePassword {
+    Database database = new Database();
     Statement statement = database.getStatement();
-    ArrayList<User> allUser = new ArrayList<>();
+    ArrayList<LoggingUser> allUser = new ArrayList<>();
     ResultSet resultSet = null;
-    private String query = "SELECT * FROM \"Users\"";
+    private String query = "SELECT login_name,login_password FROM \"Users\"";
 
-    public ArrayList<User> getAllUser(){
+    public ArrayList<LoggingUser> getUserNameAndPassword(){
 
         try
         {
             resultSet = statement.executeQuery(query);
             while (resultSet.next())
             {
-                User actualUser = new User(
-                        resultSet.getString("first_name"),
-                        resultSet.getString("last_name"),
-                        resultSet.getInt("zip_code"),
-                        resultSet.getString("city"),
-                        resultSet.getString("street_name"),
-                        resultSet.getString("email"),
+                LoggingUser actualUser = new LoggingUser(
+
                         resultSet.getString("login_name"),
                         resultSet.getString("login_password")
                 );

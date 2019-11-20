@@ -1,18 +1,17 @@
 package Checkers;
 
-import Controller.LoggingUser;
-import Controller.User;
-import Database.RetrieveAllDataFromDatabase;
-import Database.RetrieveUserNameAndPassword;
+import UserObjects.LoggingUser;
+import Database.RetrieveAllUser;
+import Database.RetrieveUsernamePassword;
 
 import java.util.ArrayList;
 
 public class IsItRegistered {
 
     public boolean isItRegistered(LoggingUser user){
-        RetrieveAllDataFromDatabase retrieveAllDataFromDatabase = new RetrieveAllDataFromDatabase();
-        RetrieveUserNameAndPassword retrieveUserNameAndPassword = new RetrieveUserNameAndPassword();
-        ArrayList<LoggingUser> registeredUsers =  retrieveUserNameAndPassword.getUserNameAndPassword();
+        RetrieveAllUser retrieveAllUser = new RetrieveAllUser();
+        RetrieveUsernamePassword retrieveUsernamePassword = new RetrieveUsernamePassword();
+        ArrayList<LoggingUser> registeredUsers =  retrieveUsernamePassword.getUserNameAndPassword();
 
         for(LoggingUser inDatabase : registeredUsers){
             if(inDatabase.getUserName().equals(user.getUserName()) && inDatabase.getPassword().equals(user.getPassword()))
