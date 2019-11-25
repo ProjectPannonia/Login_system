@@ -2,8 +2,8 @@ package Controller.Registration;
 
 import Alerts.Alerts;
 import Checkers.Checkers;
-import Database.Register;
 import Database.Retrievers.GetData;
+import Database.Retrievers.SendToDatabase;
 import UserObjects.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,7 +21,7 @@ public class RegistrationController {
     Button regisztracio_bt;
 
     Checkers checkers = new Checkers();
-
+    SendToDatabase sendToDatabase = new SendToDatabase();
     public void utca(ActionEvent e){
         utcanev_tb.setText(utcanev_tb.getText() + kozteruletjelleg_tb.getText());
     }
@@ -31,7 +31,7 @@ public class RegistrationController {
         //Emptycheck emptycheck = new Emptycheck();
         //DuplicateChecker duplicateChecker = new DuplicateChecker();
         Alerts alerts = new Alerts();
-        Register register = new Register();
+        //Register register = new Register();
         GetData getData = new GetData();
         ArrayList<User> usersInDatabase = getData.getAllUser();
         boolean notDuplicated;
@@ -60,12 +60,10 @@ public class RegistrationController {
                     loginName,
                     loginPassword);
 
-            //emptyCell = emptycheck.isItEmptyString(user);
             notDuplicated = checkers.duplicateCheck(user);
                 if (!notDuplicated){
-                    register.SendToDatabase(user);
+                    sendToDatabase.SendNewUser(user);
                 }else {
-                    //usernameAlreadyInUse.SendAlert();
                     alerts.UserNameAlreadyInUse();
                 }
 
