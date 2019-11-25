@@ -11,13 +11,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class LoginPageController {
+    Alerts alerts = new Alerts();
+    Checkers checkers = new Checkers();
 
     @FXML
     TextField userName_tb, password_tb;
     @FXML
-    Button  register_bt,login_bt,login_problem_bt;
-    Alerts alerts = new Alerts();
-    Checkers checkers = new Checkers();
+    Button register_bt, login_bt, login_problem_bt;
+
 
     // Event when user press the login button
     public void login(ActionEvent e) {
@@ -25,39 +26,31 @@ public class LoginPageController {
         boolean emptyUsername = userName_tb.getText().equals("");
         boolean emptyPassword = password_tb.getText().equals("");
 
-        if(emptyUsername && emptyPassword){
-            //myAlert = new CellsAreEmpty();
-            //myAlert.SendAlert();
+        if (emptyUsername && emptyPassword) {
             alerts.CellsAreEmpty();
-        }else if(emptyUsername || emptyPassword){
-            if (emptyUsername){
-                //myAlert = new UserNameIsEmpty();
-                //myAlert.SendAlert();
+        } else if (emptyUsername || emptyPassword) {
+            if (emptyUsername) {
                 alerts.UserNameIsEmpty();
-            }else {
-                //myAlert = new PasswordIsEmpty();
-                //myAlert.SendAlert();
+            } else {
                 alerts.PasswordIsEmpty();
             }
-        }else{
+        } else {
             String userName = userName_tb.getText();
-            String password = userName_tb.getText();
-            LoggingUser user = new LoggingUser(userName,password);
+            String password = password_tb.getText();
+            System.out.println(userName + " " + password);
+            //LoggingUser user = new LoggingUser(userName, password);
 
-            boolean registered = checkers.isItRegistered(user);
+            //boolean registered = checkers.isItRegistered(user);
 
-                if(!registered){
-                    MainPageCreator loggedIn = new MainPageCreator();
-                    loggedIn.showScreen();
-                    TemporaryUser temporaryUser = new TemporaryUser();
-                    temporaryUser.SendTemporaryUser(userName);
-                    //((Node)(e.getSource())).getScene().getWindow();
-
-                }else {
-                  //myAlert = new NotRegistered();
-                  //myAlert.SendAlert();
-                  alerts.NotRegistered();
-                }
+            if (checkers.isItRegistered(userName,password)) {
+                MainPageCreator loggedIn = new MainPageCreator();
+                loggedIn.showScreen();
+                TemporaryUser temporaryUser = new TemporaryUser();
+                temporaryUser.SendTemporaryUser(userName);
+                //((Node)(e.getSource())).getScene().getWindow();
+            } else {
+                alerts.NotRegistered();
             }
         }
     }
+}
