@@ -20,14 +20,14 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <ButtonBar layoutX="7.0" layoutY="104.0" prefHeight="140.0" prefWidth="366.0">
+            <ButtonBar layoutX="7.0" layoutY="104.0" prefHeight="140.0" prefWidth="504.0">
               <buttons>
-                <Button id="settings_bt" fx:id="settings_bt" onAction="#settings" mnemonicParsing="false" text="Adatok megadása">
+                <Button id="settings_bt" fx:id="settings_bt" mnemonicParsing="false" onAction="#settings" text="Adatok megadása">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="195.0" text="Button">
+                  <Button id="logOut_bt" fx:id="logOut_bt" onAction="#logOut" mnemonicParsing="false" prefHeight="25.0" prefWidth="195.0" text="Kijelentkezés">
                      <font>
                         <Font size="14.0" />
                      </font>

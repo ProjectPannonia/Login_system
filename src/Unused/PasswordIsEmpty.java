@@ -1,5 +1,6 @@
-package Alerts;
+package Unused;
 
+import Alerts.MyAlert;
 import javafx.scene.control.Alert;
 
 public class PasswordIsEmpty implements MyAlert {

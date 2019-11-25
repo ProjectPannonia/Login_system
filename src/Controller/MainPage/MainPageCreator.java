@@ -14,7 +14,7 @@ public class MainPageCreator {
 
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("Design/mainscreen.fxml"));
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("Controller/MainPage/mainscreen.fxml"));
             Stage stage = new Stage();
             stage.setTitle("This is the program main screen!");
             stage.setScene(new Scene(root,600,600));

@@ -12,7 +12,7 @@ public class SettingsScreenCreator {
 
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("Design/settings_page.fxml"));
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("Controller/SettingsPagedam/settings_page.fxml"));
             Stage stage = new Stage();
             stage.setTitle("This is the program settings screen!");
             stage.setScene(new Scene(root,600,600));

@@ -1,11 +1,10 @@
 package Controller.Registration;
 
-import Alerts.CellsAreEmpty;
-import Alerts.UsernameAlreadyInUse;
+import Alerts.CheckEmptyField;
 import Checkers.DuplicateChecker;
 import Checkers.Emptycheck;
 import Database.Register;
-import Database.RetrieveAllUser;
+import Database.Retrievers.GetData;
 import UserObjects.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -30,13 +29,12 @@ public class RegistrationController {
     {
         Emptycheck emptycheck = new Emptycheck();
         DuplicateChecker duplicateChecker = new DuplicateChecker();
-        CellsAreEmpty cellsAreEmpty = new CellsAreEmpty();
+        CheckEmptyField checkEmptyField = new CheckEmptyField();
         Register register = new Register();
-        UsernameAlreadyInUse usernameAlreadyInUse = new UsernameAlreadyInUse();
-        RetrieveAllUser retrieveAllUser = new RetrieveAllUser();
-        ArrayList<User> usersInDatabase = retrieveAllUser.getAllUser();
+        GetData getData = new GetData();
+        ArrayList<User> usersInDatabase = getData.getAllUser();
 
-        boolean emptyCell;
+        
         boolean notDuplicated;
 
         if (!vezeteknev_tb.getText().isEmpty() && !keresztnev_tb.getText().isEmpty() &&
@@ -68,11 +66,13 @@ public class RegistrationController {
                 if (!notDuplicated){
                     register.SendToDatabase(user);
                 }else {
-                    usernameAlreadyInUse.SendAlert();
+                    //usernameAlreadyInUse.SendAlert();
+                    checkEmptyField.UserNameAlreadyInUse();
                 }
 
         }else{
-            cellsAreEmpty.SendAlert();
+            //cellsAreEmpty.SendAlert();
+            checkEmptyField.CellsAreEmpty();
         }
 
         }
