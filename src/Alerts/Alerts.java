@@ -2,7 +2,7 @@ package Alerts;
 
 import javafx.scene.control.Alert;
 
-public class CheckEmptyField implements MyAlert{
+public class Alerts implements MyAlert{
 
     @Override
     public void NotRegistered() {

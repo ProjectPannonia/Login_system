@@ -22,7 +22,6 @@ public class DuplicateChecker
                 flag = true;
                 //break;
             }
-
         }
 
         return flag;

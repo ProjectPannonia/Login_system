@@ -1,7 +1,7 @@
 package Controller.LoginPage;
 
 import Alerts.*;
-import Checkers.IsItRegistered;
+import Checkers.Checkers;
 import Database.TemporaryUser;
 import Controller.MainPage.MainPageCreator;
 import UserObjects.LoggingUser;
@@ -16,7 +16,8 @@ public class LoginPageController {
     TextField userName_tb, password_tb;
     @FXML
     Button  register_bt,login_bt,login_problem_bt;
-    CheckEmptyField checkEmptyField = new CheckEmptyField();
+    Alerts alerts = new Alerts();
+    Checkers checkers = new Checkers();
 
     // Event when user press the login button
     public void login(ActionEvent e) {
@@ -27,24 +28,23 @@ public class LoginPageController {
         if(emptyUsername && emptyPassword){
             //myAlert = new CellsAreEmpty();
             //myAlert.SendAlert();
-            checkEmptyField.CellsAreEmpty();
+            alerts.CellsAreEmpty();
         }else if(emptyUsername || emptyPassword){
             if (emptyUsername){
                 //myAlert = new UserNameIsEmpty();
                 //myAlert.SendAlert();
-                checkEmptyField.UserNameIsEmpty();
+                alerts.UserNameIsEmpty();
             }else {
                 //myAlert = new PasswordIsEmpty();
                 //myAlert.SendAlert();
-                checkEmptyField.PasswordIsEmpty();
+                alerts.PasswordIsEmpty();
             }
         }else{
-            IsItRegistered isItRegistered = new IsItRegistered();
             String userName = userName_tb.getText();
             String password = userName_tb.getText();
             LoggingUser user = new LoggingUser(userName,password);
 
-            boolean registered = isItRegistered.isItRegistered(user);
+            boolean registered = checkers.isItRegistered(user);
 
                 if(!registered){
                     MainPageCreator loggedIn = new MainPageCreator();
@@ -56,7 +56,7 @@ public class LoginPageController {
                 }else {
                   //myAlert = new NotRegistered();
                   //myAlert.SendAlert();
-                  checkEmptyField.NotRegistered();
+                  alerts.NotRegistered();
                 }
             }
         }

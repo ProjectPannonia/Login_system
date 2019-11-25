@@ -1,8 +1,7 @@
 package Controller.Registration;
 
-import Alerts.CheckEmptyField;
-import Checkers.DuplicateChecker;
-import Checkers.Emptycheck;
+import Alerts.Alerts;
+import Checkers.Checkers;
 import Database.Register;
 import Database.Retrievers.GetData;
 import UserObjects.User;
@@ -20,21 +19,21 @@ public class RegistrationController {
             iranyitoszam_tb,utcanev_tb,kozteruletjelleg_tb,email_tb, loginName_tb,loginPassword_tb;
     @FXML
     Button regisztracio_bt;
+
+    Checkers checkers = new Checkers();
+
     public void utca(ActionEvent e){
         utcanev_tb.setText(utcanev_tb.getText() + kozteruletjelleg_tb.getText());
     }
 
-
     public void registration(ActionEvent e)
     {
-        Emptycheck emptycheck = new Emptycheck();
-        DuplicateChecker duplicateChecker = new DuplicateChecker();
-        CheckEmptyField checkEmptyField = new CheckEmptyField();
+        //Emptycheck emptycheck = new Emptycheck();
+        //DuplicateChecker duplicateChecker = new DuplicateChecker();
+        Alerts alerts = new Alerts();
         Register register = new Register();
         GetData getData = new GetData();
         ArrayList<User> usersInDatabase = getData.getAllUser();
-
-        
         boolean notDuplicated;
 
         if (!vezeteknev_tb.getText().isEmpty() && !keresztnev_tb.getText().isEmpty() &&
@@ -62,17 +61,17 @@ public class RegistrationController {
                     loginPassword);
 
             //emptyCell = emptycheck.isItEmptyString(user);
-            notDuplicated = duplicateChecker.duplicateCheck(user);
+            notDuplicated = checkers.duplicateCheck(user);
                 if (!notDuplicated){
                     register.SendToDatabase(user);
                 }else {
                     //usernameAlreadyInUse.SendAlert();
-                    checkEmptyField.UserNameAlreadyInUse();
+                    alerts.UserNameAlreadyInUse();
                 }
 
         }else{
             //cellsAreEmpty.SendAlert();
-            checkEmptyField.CellsAreEmpty();
+            alerts.CellsAreEmpty();
         }
 
         }
