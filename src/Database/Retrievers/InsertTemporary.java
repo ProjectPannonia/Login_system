@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class GetData
+public class InsertTemporary
 {
     Database database = new Database();
     Statement statement = database.getStatement();

@@ -2,7 +2,7 @@ package Controller.Registration;
 
 import Alerts.Alerts;
 import Checkers.Checkers;
-import Database.Retrievers.GetData;
+import Database.Retrievers.InsertTemporary;
 import Database.Retrievers.SendToDatabase;
 import UserObjects.User;
 import javafx.event.ActionEvent;
@@ -32,8 +32,8 @@ public class RegistrationController {
         //DuplicateChecker duplicateChecker = new DuplicateChecker();
         Alerts alerts = new Alerts();
         //Register register = new Register();
-        GetData getData = new GetData();
-        ArrayList<User> usersInDatabase = getData.getAllUser();
+        InsertTemporary insertTemporary = new InsertTemporary();
+        ArrayList<User> usersInDatabase = insertTemporary.getAllUser();
         boolean notDuplicated;
 
         if (!vezeteknev_tb.getText().isEmpty() && !keresztnev_tb.getText().isEmpty() &&
@@ -62,7 +62,7 @@ public class RegistrationController {
 
             notDuplicated = checkers.duplicateCheck(user);
                 if (!notDuplicated){
-                    sendToDatabase.SendNewUser(user);
+                    sendToDatabase.InsertNewUser(user);
                 }else {
                     alerts.UserNameAlreadyInUse();
                 }

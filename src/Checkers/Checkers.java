@@ -1,13 +1,13 @@
 package Checkers;
 
-import Database.Retrievers.GetData;
+import Database.Retrievers.InsertTemporary;
 import UserObjects.LoggingUser;
 import UserObjects.User;
 
 import java.util.ArrayList;
 
 public class Checkers implements CheckFunctions {
-    GetData createListFromDatabase = new GetData();
+    InsertTemporary createListFromDatabase = new InsertTemporary();
     ArrayList<User> registeredUsers = new ArrayList<>();
 
     @Override
@@ -27,10 +27,10 @@ public class Checkers implements CheckFunctions {
 
     @Override
     public boolean isItRegistered(String userName,String password) {
-        GetData getData = new GetData();
+        InsertTemporary insertTemporary = new InsertTemporary();
         //RetrieveUsernamePassword retrieveUsernamePassword = new RetrieveUsernamePassword();
         boolean flag = false;
-        ArrayList<LoggingUser> registeredUsers = getData.getUserNameAndPassword();
+        ArrayList<LoggingUser> registeredUsers = insertTemporary.getUserNameAndPassword();
 
         for (int i = 0; i < registeredUsers.size(); i++){
             String registeredUserName = registeredUsers.get(i).getUserName();

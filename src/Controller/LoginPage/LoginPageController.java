@@ -42,7 +42,7 @@ public class LoginPageController {
             if (checkers.isItRegistered(userName, password)) {
                 MainPageCreator loggedIn = new MainPageCreator();
                 loggedIn.showScreen();
-                sendToDatabase.SendTemporaryUser(userName);
+                sendToDatabase.Send(userName);
                 //((Node)(e.getSource())).getScene().getWindow();
             } else {
                 alerts.NotRegistered();

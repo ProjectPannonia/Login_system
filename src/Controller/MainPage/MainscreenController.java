@@ -1,7 +1,7 @@
 package Controller.MainPage;
 
 import Controller.SettingsPage.SettingsScreenCreator;
-import Database.Retrievers.GetData;
+import Database.Retrievers.InsertTemporary;
 import Database.TruncateTemporary.TruncateTemporaryUser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,8 +9,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 public class MainscreenController {
-    GetData getData = new GetData();
-    String actualUser = getData.getTemporaryUser();
+    InsertTemporary insertTemporary = new InsertTemporary();
+    String actualUser = insertTemporary.getTemporaryUser();
 
     @FXML
     Label logged_in = setLabel(actualUser);
